@@ -1,5 +1,18 @@
+
+
+
 node_modules/
-coverage/
 dist/
-.env
+
+# Logs
+.DS_Store
+
+
 logs/
+
+
+.env
+
+mongo/
+
+postgres/
