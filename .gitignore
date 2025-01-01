@@ -13,6 +13,7 @@ logs/
 
 .env
 
-mongo/
-
-postgres/
+/mongo
+/postgres
+/prisma
+/coverage

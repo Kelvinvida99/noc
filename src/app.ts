@@ -1,5 +1,6 @@
-import { MonogoDatabase } from './config/mongo/init';
+import { PrismaClient } from '@prisma/client';
 import { envs } from './config/plugins/envs.plugin';
+import { MongoDatabase } from './data/mongo';
 import { Server } from './presentation/server';
 
 
@@ -10,8 +11,13 @@ import { Server } from './presentation/server';
 
 async function main(){
 
-  await MonogoDatabase.connect({mongoUrl: envs.MONGO_URL, dbName: envs.MONGO_USER})
-  //Server.start();
+  await MongoDatabase.connect({
+    mongoUrl: envs.MONGO_URL,
+    dbName: envs.MONGO_DB_NAME,
+  });
+
+
+  Server.start();
 }
 
 
